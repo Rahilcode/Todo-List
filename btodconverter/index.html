@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BinToDecConverter</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            /* border: 2px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            font-size: 3rem;
+            margin: 1.1rem;
+            font-weight: bold;
+        }
+        .conv{
+            width: 100%;
+        }
+        .conv input{
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding: 0.4rem;
+            margin: 1rem;
+        }
+        .conv button{
+            display: block;
+            width: 20%;
+            margin: auto;
+            padding: 0.4rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            background-color: rgb(236, 169, 44);
+        }
+        p{
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 2rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Binary To Decimal Converter</h1>
+            <div class="conv">
+                <input type="number" name="btd" id="btd" placeholder="Enter the binary number">
+                <button onclick="convert()">Convert</button>
+            </div>
+            <p id="dec"></p>
+        </div>
+    </div>
+    <script>
+        document.querySelector('button').disabled = true;
+
+        document.getElementById('btd').onkeyup = () => {
+            if (document.getElementById('btd').value.length > 0) {
+                document.querySelector('button').disabled = false;
+            }else{
+                document.querySelector('button').disabled = true;
+            }
+        }
+
+        function convert(){
+            let val = document.getElementById('btd').value;
+            result = parseInt(val, 2).toString(10);
+            document.getElementById('dec').innerHTML = `The Decimal value is: ${result}`;
+            document.getElementById('btd').value = '';
+            document.querySelector('button').disabled = true;
+        }
+        
+    </script>
+</body>
+</html>
