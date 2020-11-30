@@ -40,3 +40,12 @@ form label{
     font-weight: 700;
     width: auto;
 }
+
+li{
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+    list-style-type: circle;
+    font-weight: bold;
+    text-transform: uppercase;
+}

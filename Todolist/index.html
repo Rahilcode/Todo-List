@@ -10,12 +10,15 @@
     <h1>Todo List</h1>
     <div class="container">
         <div class="box">
-            <form action="noaction">
-                <label for="task">Task</label>
-                <input class="todo" type="text" id="task" name="task" placeholder="Enter your Task">
-                <button class="btn">Add</button>
+            <form>
+                <label>Task</label>
+                <input class="todo" type="text" id="task" placeholder="Enter your Task">
+                <!-- <button class="btn">Add</button> -->
+                <input id="btn" type="submit">
             </form>
+            <ul id="tasks"></ul>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
