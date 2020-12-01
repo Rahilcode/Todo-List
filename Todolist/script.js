@@ -17,8 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
     li.innerHTML = task;
     const check = document.createElement('button');
     const bin = document.createElement('button');
-    check.innerHTML = '<i>ch</i>';
-    bin.innerHTML = '<i>del</i>';
+    check.innerHTML = '<i class="fas fa-2x fa-check-square"></i>';
+    bin.innerHTML = '<i class="far fa-2x fa-trash-alt"></i>';
+
+    document.querySelector('#h2').innerHTML = 'Tasks To Do';
+    document.querySelector('#h21').innerHTML = 'Completed Tasks';
 
     document.querySelector('#tasks').append(li);
     document.querySelector('#tasks').append(check);
@@ -26,7 +29,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('#task').value = '';
     document.querySelector('.btn').disabled = true;
+    
+    
+    bin.addEventListener('click', function(e) {
+        li.remove();
+        check.remove();
+        bin.remove();
+    });
 
+    check.addEventListener('click', function(e) {
+        li.remove();
+        check.remove();
+        bin.remove();
+        document.querySelector('#comp').append(li);
+        document.querySelector('#comp').append(check);
+        document.querySelector('#comp').append(bin);
+        check.style.display = 'none';
+    });
 
     return false;
 }
